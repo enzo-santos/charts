@@ -14,8 +14,9 @@
 // limitations under the License.
 
 import 'dart:math' show cos, pi, sin, Point;
-import 'package:flutter/material.dart';
+
 import 'package:charts_common/common.dart' as common show Color;
+import 'package:flutter/material.dart';
 
 /// Draws a sector of a circle, with an optional hole in the center.
 class CircleSectorPainter {
@@ -59,9 +60,7 @@ class CircleSectorPainter {
 
     final centerOffset = new Offset(center.x.toDouble(), center.y.toDouble());
 
-    final isFullCircle = startAngle != null &&
-        endAngle != null &&
-        endAngle - startAngle == 2 * pi;
+    final isFullCircle = endAngle - startAngle == 2 * pi;
 
     final midpointAngle = (endAngle + startAngle) / 2;
 

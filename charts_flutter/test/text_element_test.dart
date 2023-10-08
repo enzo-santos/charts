@@ -13,12 +13,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/material.dart' show BuildContext;
-import 'package:mockito/mockito.dart';
-import 'package:flutter/widgets.dart' show InheritedWidget;
-import 'package:test/test.dart';
 import 'package:charts_flutter/src/graphics_factory.dart';
 import 'package:charts_flutter/src/text_element.dart';
+import 'package:flutter/material.dart' show BuildContext;
+import 'package:flutter/widgets.dart' show InheritedWidget;
+import 'package:mockito/mockito.dart';
+import 'package:test/test.dart';
 
 // Can't use Mockito annotations with BuildContext yet? Fake it.
 class FakeBuildContext extends Fake implements BuildContext {
@@ -33,7 +33,7 @@ class FakeBuildContext extends Fake implements BuildContext {
 class FakeGraphicsFactoryHelper extends Fake implements GraphicsFactoryHelper {
   double textScaleFactor;
 
-  FakeGraphicsFactoryHelper(this.textScaleFactor) {}
+  FakeGraphicsFactoryHelper(this.textScaleFactor);
 
   @override
   double getTextScaleFactorOf(BuildContext context) => textScaleFactor;

@@ -13,24 +13,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'dart:developer';
+
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
-import 'dart:developer';
-import 'app_config.dart';
-import 'drawer.dart';
+
 import 'a11y/a11y_gallery.dart' as a11y show buildGallery;
-import 'bar_chart/bar_gallery.dart' as bar show buildGallery;
-import 'time_series_chart/time_series_gallery.dart' as time_series
-    show buildGallery;
-import 'line_chart/line_gallery.dart' as line show buildGallery;
-import 'scatter_plot_chart/scatter_plot_gallery.dart' as scatter_plot
-    show buildGallery;
-import 'combo_chart/combo_gallery.dart' as combo show buildGallery;
-import 'pie_chart/pie_gallery.dart' as pie show buildGallery;
+import 'app_config.dart';
 import 'axes/axes_gallery.dart' as axes show buildGallery;
+import 'bar_chart/bar_gallery.dart' as bar show buildGallery;
 import 'behaviors/behaviors_gallery.dart' as behaviors show buildGallery;
+import 'combo_chart/combo_gallery.dart' as combo show buildGallery;
+import 'drawer.dart';
 import 'i18n/i18n_gallery.dart' as i18n show buildGallery;
 import 'legends/legends_gallery.dart' as legends show buildGallery;
+import 'line_chart/line_gallery.dart' as line show buildGallery;
+import 'pie_chart/pie_gallery.dart' as pie show buildGallery;
+import 'scatter_plot_chart/scatter_plot_gallery.dart' as scatter_plot
+    show buildGallery;
+import 'time_series_chart/time_series_gallery.dart' as time_series
+    show buildGallery;
 
 /// Main entry point of the gallery app.
 ///
@@ -50,13 +52,11 @@ class Home extends StatelessWidget {
   final i18nGalleries = i18n.buildGallery();
   final legendsGalleries = legends.buildGallery();
 
-  Home(
-      {Key? key,
-      this.showPerformanceOverlay = false,
-      required this.onShowPerformanceOverlayChanged})
-      : super(key: key) {
-    assert(onShowPerformanceOverlayChanged != null);
-  }
+  Home({
+    super.key,
+    this.showPerformanceOverlay = false,
+    required this.onShowPerformanceOverlayChanged,
+  });
 
   @override
   Widget build(BuildContext context) {

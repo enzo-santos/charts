@@ -14,8 +14,10 @@
 // limitations under the License.
 
 import 'dart:math' show cos, sin, Point;
-import 'package:flutter/material.dart';
+
 import 'package:charts_common/common.dart' as common show CanvasPie;
+import 'package:flutter/material.dart';
+
 import 'circle_sector_painter.dart' show CircleSectorPainter;
 
 /// Draws a pie chart, with an optional hole in the center.
@@ -40,9 +42,7 @@ class PiePainter {
 
     // Draw stroke lines between pie slices. This is done after the slices are
     // drawn to ensure that they appear on top.
-    if (canvasPie.stroke != null &&
-        canvasPie.strokeWidthPx != null &&
-        canvasPie.slices.length > 1) {
+    if (canvasPie.stroke != null && canvasPie.slices.length > 1) {
       paint.color = new Color.fromARGB(canvasPie.stroke!.a, canvasPie.stroke!.r,
           canvasPie.stroke!.g, canvasPie.stroke!.b);
 

@@ -14,25 +14,23 @@
 // limitations under the License.
 
 import 'dart:math' show Point;
-import 'package:flutter/material.dart';
+
 import 'package:charts_common/common.dart' as common show Color;
+import 'package:flutter/material.dart';
 
 /// Draws a simple point.
 ///
 /// TODO: Support for more shapes than circles?
 class PointPainter {
-  static void draw(
-      {required Canvas canvas,
-      required Paint paint,
-      required Point point,
-      required double radius,
-      common.Color? fill,
-      common.Color? stroke,
-      double? strokeWidthPx}) {
-    if (point == null) {
-      return;
-    }
-
+  static void draw({
+    required Canvas canvas,
+    required Paint paint,
+    required Point point,
+    required double radius,
+    common.Color? fill,
+    common.Color? stroke,
+    double? strokeWidthPx,
+  }) {
     if (fill != null) {
       paint.color = new Color.fromARGB(fill.a, fill.r, fill.g, fill.b);
       paint.style = PaintingStyle.fill;
